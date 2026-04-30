@@ -11,7 +11,7 @@ const Button: React.FC<ButtonProps> = ({ text, variant = 'primary', icon, onClic
   const isPrimary = variant === 'primary';
 
   const containerStyle: React.CSSProperties = {
-    alignSelf: 'stretch',
+    width: 342,
     height: 64,
     position: 'relative',
     background: isPrimary
@@ -20,28 +20,21 @@ const Button: React.FC<ButtonProps> = ({ text, variant = 'primary', icon, onClic
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 8,
-    display: 'inline-flex',
+    display: 'flex',
     cursor: 'pointer',
-    border: isPrimary ? 'none' : '1px solid #E0E0E0',
+    border: isPrimary ? 'none' : '1px solid rgba(13, 99, 27, 0.10)',
     boxShadow: isPrimary
       ? '0px 4px 6px -4px rgba(13, 99, 27, 0.10), 0px 10px 15px -3px rgba(13, 99, 27, 0.10)'
       : '0px 4px 24px rgba(0, 0, 0, 0.06)',
-    width: '100%',
-    padding: '0 24px'
   };
 
   const textStyle: React.CSSProperties = {
     textAlign: 'center',
-    justifyContent: 'center',
-    display: 'flex',
-    flexDirection: 'column',
     color: isPrimary ? 'white' : '#191C1D',
     fontSize: 18,
     fontFamily: 'Manrope',
     fontWeight: '700',
     lineHeight: '28px',
-    wordWrap: 'break-word',
     zIndex: 1
   };
 
@@ -49,7 +42,14 @@ const Button: React.FC<ButtonProps> = ({ text, variant = 'primary', icon, onClic
     <div style={containerStyle} onClick={onClick}>
       <div style={textStyle}>{text}</div>
       {icon && (
-        <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex', zIndex: 1 }}>
+        <div style={{
+          position: 'absolute',
+          right: 24,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 1
+        }}>
           {icon}
         </div>
       )}
