@@ -1,4 +1,5 @@
 import React from 'react';
+import { Recycle, ArrowRight } from 'lucide-react';
 
 const WelcomeScreen: React.FC = () => {
   return (
@@ -116,7 +117,7 @@ const WelcomeScreen: React.FC = () => {
                   display: 'inline-flex'
                 }}>
                   <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex' }}>
-                    <div style={{ width: 42.05, height: 42, background: '#0D631B' }} />
+                    <Recycle size={56} color="#0D631B" />
                   </div>
                   <div style={{
                     width: 105.60,
@@ -185,7 +186,7 @@ const WelcomeScreen: React.FC = () => {
                   wordWrap: 'break-word'
                 }}>Я клиент</div>
                 <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex' }}>
-                  <div style={{ width: 16, height: 16, background: 'white' }} />
+                  <ArrowRight size={20} color="white" />
                 </div>
               </div>
               <div style={{
