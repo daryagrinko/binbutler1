@@ -1,5 +1,5 @@
 import React from 'react';
-import { Recycle, ArrowRight } from 'lucide-react';
+import { Recycle } from 'lucide-react';
 import Button from './Button';
 
 const WelcomeScreen: React.FC = () => {
@@ -94,7 +94,6 @@ const WelcomeScreen: React.FC = () => {
             <Button
               text="Я клиент"
               variant="primary"
-              icon={<ArrowRight size={20} color="white" />}
             />
             <Button
               text="Я исполнитель"
