@@ -4,10 +4,11 @@ interface ButtonProps {
   text: string;
   variant?: 'primary' | 'secondary';
   icon?: React.ReactNode;
+  iconPosition?: 'right' | 'absolute';
   onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, variant = 'primary', icon, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ text, variant = 'primary', icon, iconPosition = 'absolute', onClick }) => {
   const isPrimary = variant === 'primary';
 
   const containerStyle: React.CSSProperties = {
@@ -26,6 +27,7 @@ const Button: React.FC<ButtonProps> = ({ text, variant = 'primary', icon, onClic
     boxShadow: isPrimary
       ? '0px 4px 6px -4px rgba(13, 99, 27, 0.10), 0px 10px 15px -3px rgba(13, 99, 27, 0.10)'
       : '0px 4px 24px rgba(0, 0, 0, 0.06)',
+    gap: iconPosition === 'right' ? 8 : 0
   };
 
   const textStyle: React.CSSProperties = {
@@ -42,9 +44,14 @@ const Button: React.FC<ButtonProps> = ({ text, variant = 'primary', icon, onClic
     <div style={containerStyle} onClick={onClick}>
       <div style={textStyle}>{text}</div>
       {icon && (
-        <div style={{
+        <div style={iconPosition === 'absolute' ? {
           position: 'absolute',
           right: 24,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 1
+        } : {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

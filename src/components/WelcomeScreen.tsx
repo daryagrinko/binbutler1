@@ -1,8 +1,15 @@
 import React from 'react';
 import { Recycle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 
 const WelcomeScreen: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/phone');
+  };
+
   return (
     <div style={{
       width: '100%',
@@ -94,10 +101,12 @@ const WelcomeScreen: React.FC = () => {
             <Button
               text="Я клиент"
               variant="primary"
+              onClick={handleNavigate}
             />
             <Button
               text="Я исполнитель"
               variant="secondary"
+              onClick={handleNavigate}
             />
 
             <div style={{
@@ -114,14 +123,18 @@ const WelcomeScreen: React.FC = () => {
                 fontWeight: '400',
                 lineHeight: '20px'
               }}>Уже есть аккаунт?</span>
-              <a href="/login" style={{
-                color: '#0D631B',
-                fontSize: 16,
-                fontFamily: 'Inter',
-                fontWeight: '700',
-                lineHeight: '20px',
-                textDecoration: 'none'
-              }}>Войти</a>
+              <span
+                onClick={handleNavigate}
+                style={{
+                  color: '#0D631B',
+                  fontSize: 16,
+                  fontFamily: 'Inter',
+                  fontWeight: '700',
+                  lineHeight: '20px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >Войти</span>
             </div>
           </div>
         </div>
