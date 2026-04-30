@@ -22,6 +22,7 @@ const WelcomeScreen: React.FC = () => {
       <div style={{
         width: 390,
         height: 844,
+        margin: '0 auto',
         background: 'linear-gradient(0deg, #F8FAFB 0%, #F8FAFB 100%), white',
         flexDirection: 'column',
         justifyContent: 'center',
