@@ -1,5 +1,6 @@
 import React from 'react';
 import { Recycle, ArrowRight } from 'lucide-react';
+import Button from './Button';
 
 const WelcomeScreen: React.FC = () => {
   return (
@@ -9,283 +10,141 @@ const WelcomeScreen: React.FC = () => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      background: '#F8FAFB'
+      background: '#F8FAFB',
+      padding: '20px 0'
     }}>
       <div style={{
         width: 390,
         height: 844,
         background: 'linear-gradient(0deg, #F8FAFB 0%, #F8FAFB 100%), white',
+        flexDirection: 'column',
         justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        gap: 10,
-        display: 'inline-flex',
+        alignItems: 'center',
+        display: 'flex',
         overflow: 'hidden',
-        position: 'relative'
+        position: 'relative',
+        boxShadow: '0px 0px 20px rgba(0,0,0,0.05)',
+        borderRadius: 32
       }}>
         <div style={{
-          width: 390,
-          height: 884,
-          maxWidth: 448,
-          minHeight: 884,
+          width: '100%',
+          flex: 1,
           paddingLeft: 24,
           paddingRight: 24,
           paddingTop: 48,
-          paddingBottom: 48,
+          paddingBottom: 24,
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          display: 'inline-flex'
+          display: 'flex'
+        }}>
+          {/* Logo and Title Section */}
+          <div style={{
+            alignSelf: 'stretch',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            display: 'flex',
+            marginBottom: 40
+          }}>
+            <div style={{
+              width: 96,
+              height: 96,
+              background: 'white',
+              boxShadow: '0px 8px 32px rgba(0, 0, 0, 0.06)',
+              borderRadius: 9999,
+              justifyContent: 'center',
+              alignItems: 'center',
+              display: 'flex',
+              position: 'relative',
+              marginBottom: 24
+            }}>
+              <Recycle size={56} color="#0D631B" />
+              <div style={{
+                width: 105.60,
+                height: 105.60,
+                position: 'absolute',
+                background: 'rgba(13, 99, 27, 0.05)',
+                borderRadius: 9999
+              }} />
+            </div>
+
+            <div style={{
+              color: '#2E7D32',
+              fontSize: 56,
+              fontFamily: 'Manrope',
+              fontWeight: '800',
+              lineHeight: '56px',
+              textAlign: 'center',
+              marginBottom: 16
+            }}>BinButler</div>
+
+            <div style={{
+              color: '#191C1D',
+              fontSize: 20,
+              fontFamily: 'Manrope',
+              fontWeight: '300',
+              lineHeight: '35.20px',
+              textAlign: 'center'
+            }}>Вынос мусора за пару кликов</div>
+          </div>
+
+          {/* Buttons Section */}
+          <div style={{
+            alignSelf: 'stretch',
+            flexDirection: 'column',
+            gap: 20,
+            display: 'flex',
+            width: '100%'
+          }}>
+            <Button
+              text="Я клиент"
+              variant="primary"
+              icon={<ArrowRight size={20} color="white" />}
+            />
+            <Button
+              text="Я исполнитель"
+              variant="secondary"
+            />
+          </div>
+        </div>
+
+        {/* Footer Section */}
+        <div style={{
+          width: '100%',
+          paddingBottom: 48,
+          paddingTop: 24,
+          justifyContent: 'center',
+          alignItems: 'center',
+          display: 'flex'
         }}>
           <div style={{
-            alignSelf: 'stretch',
-            height: 357.19,
-            minHeight: 262.38,
-            paddingTop: 94.81,
-            flexDirection: 'column',
+            paddingLeft: 16,
+            paddingRight: 16,
+            paddingTop: 8,
+            paddingBottom: 8,
+            borderRadius: 9999,
             justifyContent: 'center',
-            alignItems: 'flex-start',
-            display: 'flex'
+            alignItems: 'center',
+            gap: 8,
+            display: 'flex',
+            cursor: 'default'
           }}>
-            <div style={{ alignSelf: 'stretch', height: 262.38, position: 'relative' }}>
-              <div style={{
-                paddingBottom: 16,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                top: 120,
-                position: 'absolute',
-                flexDirection: 'column',
-                justifyContent: 'flex-start',
-                alignItems: 'flex-start',
-                display: 'inline-flex'
-              }}>
-                <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', display: 'flex' }}>
-                  <div style={{
-                    width: 280,
-                    height: 56,
-                    textAlign: 'center',
-                    justifyContent: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    color: '#2E7D32',
-                    fontSize: 56,
-                    fontFamily: 'Manrope',
-                    fontWeight: '800',
-                    lineHeight: '56px',
-                    whiteSpace: 'nowrap'
-                  }}>BinButler</div>
-                </div>
-              </div>
-              <div style={{ width: 341.99, height: 70.38, left: '50%', transform: 'translateX(-50%)', top: 192, position: 'absolute' }}>
-                <div style={{
-                  width: '100%',
-                  top: 0.19,
-                  position: 'absolute',
-                  textAlign: 'center',
-                  justifyContent: 'center',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  color: '#191C1D',
-                  fontSize: 20,
-                  fontFamily: 'Manrope',
-                  fontWeight: '300',
-                  lineHeight: '35.20px',
-                  wordWrap: 'break-word'
-                }}>Вынос мусора за пару кликов</div>
-              </div>
-              <div style={{
-                width: 96,
-                height: 120,
-                paddingBottom: 24,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                top: 0,
-                position: 'absolute',
-                flexDirection: 'column',
-                justifyContent: 'flex-start',
-                alignItems: 'flex-start',
-                display: 'inline-flex'
-              }}>
-                <div style={{
-                  width: 96,
-                  height: 96,
-                  position: 'relative',
-                  background: 'white',
-                  boxShadow: '0px 8px 32px rgba(0, 0, 0, 0.06)',
-                  borderRadius: 9999,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  display: 'inline-flex'
-                }}>
-                  <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex' }}>
-                    <Recycle size={56} color="#0D631B" />
-                  </div>
-                  <div style={{
-                    width: 105.60,
-                    height: 105.60,
-                    left: -4.80,
-                    top: -4.80,
-                    position: 'absolute',
-                    background: 'rgba(13, 99, 27, 0.05)',
-                    borderRadius: 9999
-                  }} />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style={{ alignSelf: 'stretch', height: 64 }} />
-          <div style={{
-            alignSelf: 'stretch',
-            height: 250.81,
-            minHeight: 156,
-            paddingBottom: 94.81,
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'flex-start',
-            display: 'flex'
-          }}>
-            <div style={{
-              alignSelf: 'stretch',
-              flexDirection: 'column',
-              justifyContent: 'flex-start',
-              alignItems: 'flex-start',
-              gap: 20,
-              display: 'flex'
-            }}>
-              <div style={{
-                alignSelf: 'stretch',
-                height: 64,
-                position: 'relative',
-                background: 'linear-gradient(169deg, #0D631B 0%, #2E7D32 100%)',
-                borderRadius: 12,
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: 8,
-                display: 'inline-flex',
-                cursor: 'pointer'
-              }}>
-                <div style={{
-                  width: 342,
-                  height: 64,
-                  left: 0,
-                  top: 0,
-                  position: 'absolute',
-                  background: 'rgba(255, 255, 255, 0)',
-                  boxShadow: '0px 4px 6px -4px rgba(13, 99, 27, 0.10), 0px 10px 15px -3px rgba(13, 99, 27, 0.10)',
-                  borderRadius: 12
-                }} />
-                <div style={{
-                  textAlign: 'center',
-                  justifyContent: 'center',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  color: 'white',
-                  fontSize: 18,
-                  fontFamily: 'Manrope',
-                  fontWeight: '700',
-                  lineHeight: '28px',
-                  wordWrap: 'break-word'
-                }}>Я клиент</div>
-                <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex' }}>
-                  <ArrowRight size={20} color="white" />
-                </div>
-              </div>
-              <div style={{
-                alignSelf: 'stretch',
-                height: 64,
-                position: 'relative',
-                background: 'linear-gradient(169deg, #0D631B 0%, #2E7D32 100%)',
-                boxShadow: '0px 4px 24px rgba(0, 0, 0, 0.06)',
-                borderRadius: 12,
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: 8,
-                display: 'inline-flex',
-                cursor: 'pointer'
-              }}>
-                <div style={{
-                  width: 342,
-                  height: 64,
-                  left: 0,
-                  top: 0,
-                  position: 'absolute',
-                  background: 'white',
-                  boxShadow: '0px 4px 6px -4px rgba(13, 99, 27, 0.10), 0px 10px 15px -3px rgba(13, 99, 27, 0.10)',
-                  borderRadius: 12
-                }} />
-                <div style={{
-                  textAlign: 'center',
-                  justifyContent: 'center',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  color: '#191C1D',
-                  fontSize: 18,
-                  fontFamily: 'Manrope',
-                  fontWeight: '700',
-                  lineHeight: '28px',
-                  wordWrap: 'break-word',
-                  zIndex: 1
-                }}>Я исполнитель</div>
-              </div>
-            </div>
-          </div>
-          <div style={{
-            alignSelf: 'stretch',
-            paddingTop: 48,
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-start',
-            display: 'flex'
-          }}>
-            <div style={{
-              alignSelf: 'stretch',
-              paddingBottom: 32,
-              flexDirection: 'column',
-              justifyContent: 'flex-start',
-              alignItems: 'center',
-              display: 'flex'
-            }}>
-              <div style={{
-                paddingLeft: 16,
-                paddingRight: 16,
-                paddingTop: 8,
-                paddingBottom: 8,
-                borderRadius: 9999,
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-                gap: 8.01,
-                display: 'inline-flex',
-                cursor: 'pointer'
-              }}>
-                <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex' }}>
-                  <div style={{
-                    textAlign: 'center',
-                    justifyContent: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    color: '#48626E',
-                    fontSize: 16,
-                    fontFamily: 'Inter',
-                    fontWeight: '400',
-                    lineHeight: '20px',
-                    wordWrap: 'break-word'
-                  }}>Уже есть аккаунт?</div>
-                </div>
-                <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex' }}>
-                  <div style={{
-                    textAlign: 'center',
-                    justifyContent: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    color: '#0D631B',
-                    fontSize: 16,
-                    fontFamily: 'Inter',
-                    fontWeight: '700',
-                    lineHeight: '20px',
-                    wordWrap: 'break-word'
-                  }}>Войти</div>
-                </div>
-              </div>
-            </div>
+            <span style={{
+              color: '#48626E',
+              fontSize: 16,
+              fontFamily: 'Inter',
+              fontWeight: '400',
+              lineHeight: '20px'
+            }}>Уже есть аккаунт?</span>
+            <a href="/login" style={{
+              color: '#0D631B',
+              fontSize: 16,
+              fontFamily: 'Inter',
+              fontWeight: '700',
+              lineHeight: '20px',
+              textDecoration: 'none'
+            }}>Войти</a>
           </div>
         </div>
       </div>
