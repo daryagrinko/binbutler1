@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import WelcomeScreen from './components/WelcomeScreen'
-import PhoneInputScreen from './components/PhoneInputScreen'
+import PhoneAuthScreen from './components/PhoneAuthScreen'
 import './App.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<WelcomeScreen />} />
-        <Route path="/phone" element={<PhoneInputScreen />} />
+        <Route path="/phone" element={<PhoneAuthScreen />} />
       </Routes>
     </BrowserRouter>
   )
